@@ -1,0 +1,148 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body {
+  background: linear-gradient(150deg, #000033, #800080);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+  width: 400px;
+  padding: 40px 30px;
+  background: #1a1a1a; 
+  border-radius: 16px;
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.8),
+    0 4px 6px rgba(0,0,0,0.5),
+    inset 0 0 10px rgba(255,255,255,0.05);
+  overflow: hidden;
+}
+
+.card > * { position: relative; z-index: 2; }
+
+.card h4.gradient-text {
+  text-align: center;
+  margin-top: 2px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 25px;
+  background: linear-gradient(90deg, #0ff, #f0f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  margin-bottom: 30px;
+  opacity: 0.8;
+}
+
+.input-wrap {
+  position: relative;
+}
+
+.card input[type="text"] {
+  width: calc(100% - 20px);
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+  background: #2a2a2a;
+  color: #fff;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.card input[type="text"]:focus {
+  background: #333;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background-image: 
+    linear-gradient(#333, #333),
+    linear-gradient(90deg, #0ff, #f0f);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.card button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: linear-gradient(135deg, #ff6aff, #00d4ff);
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.card button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px #ff6aff80, 0 0 10px #00d4ff80;
+}
+
+#map {
+  height: 300px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ff6aff40, 0 0 10px #00d4ff40;
+}
+
+#reply {
+  color: #fff;
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+.loading-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  z-index: 10;
+}
+
+.neon-spinner {
+  display: flex;
+  justify-content: space-between;
+  width: 80px;
+}
+
+.neon-spinner div {
+  width: 10px;
+  height: 30px;
+  background: linear-gradient(180deg, #ff6aff, #00d4ff);
+  border-radius: 5px;
+  animation: neon-wave 1s infinite ease-in-out;
+}
+
+.neon-spinner div:nth-child(1) { animation-delay: 0s; }
+.neon-spinner div:nth-child(2) { animation-delay: 0.1s; }
+.neon-spinner div:nth-child(3) { animation-delay: 0.2s; }
+.neon-spinner div:nth-child(4) { animation-delay: 0.3s; }
+.neon-spinner div:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes neon-wave {
+  0%, 40%, 100% { transform: scaleY(0.4); opacity: 0.5; }
+  20% { transform: scaleY(1); opacity: 1; }
+}
+
+
